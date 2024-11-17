@@ -8,6 +8,7 @@ import { useDemoRouter } from "@toolpad/core/internal";
 import Bermil from "./fuelLevel";
 import MaintenanceReminder from "./maintenanceReminder";
 import { LineChart } from "@mui/x-charts";
+import CostWidget from "./costWidget";
 const demoTheme = createTheme({
   cssVariables: {
     colorSchemeSelector: "data-toolpad-color-scheme",
@@ -57,6 +58,7 @@ return (
                     height={300}
                 />
             </div>
+            <CostWidget/>
             </div>
             
         
