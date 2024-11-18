@@ -2,6 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const CamionCard = ({ truck, onSelectCamion }) => {
+  let fuelColor;
+  if (truck.fuelLevel > 75) {
+    fuelColor = "bg-green-500";
+  } else if (truck.fuelLevel > 50) {
+    fuelColor = "bg-yellow-500";
+  } else if (truck.fuelLevel > 25) {
+    fuelColor = "bg-orange-500";
+  } else {
+    fuelColor = "bg-red-500";
+  }
   return (
     <Link to={`${truck.id}`} key={truck.id}>
       <div
@@ -23,7 +33,7 @@ const CamionCard = ({ truck, onSelectCamion }) => {
         <div className="mt-4">
           <div className="h-2 bg-gray-200 rounded-full">
             <div
-              className={`h-2 ${truck.color} rounded-full`}
+              className={`h-2 ${fuelColor} rounded-full`}
               style={{ width: `${truck.fuelLevel}%` }}
             ></div>
           </div>
