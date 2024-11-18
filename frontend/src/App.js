@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
 import LoadingPage from "./components/loadingPage";
-import DashboardLayoutSidebarHidden from "./components/dashboardLayout";
-
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import TrucksListing from "./pages/TrucksListing";
+import TruckDashboard from "./pages/TruckDashboard";
+import Layout from "./components/Layout";
+import Reports from "./pages/Reports";
+import Settings from "./pages/Settings";
 const FuelBarrel = () => {
-
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     setTimeout(() => {
@@ -15,9 +20,18 @@ const FuelBarrel = () => {
       {loading ? (
         <LoadingPage />
       ) : (
-        <DashboardLayoutSidebarHidden/>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<HomePage />} />
+              <Route path="trucklist" element={<TrucksListing />} />
+              <Route path="trucklist/:truckid" element={<TruckDashboard />} />
+              <Route path="reports" element={<Reports />} />
+              <Route path="settings" element={<Settings />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
       )}
-     
     </div>
   );
 };
