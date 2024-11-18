@@ -18,8 +18,8 @@ const trucks = [
     color: "bg-orange-500",
   },
   {
-    id: 3,
-    name: "Camion 3",
+    id: 7,
+    name: "Camion 7",
     fuelLevel: 25,
     imgSrc: "https://placehold.co/100x100?text=Truck+3",
     color: "bg-red-500",
