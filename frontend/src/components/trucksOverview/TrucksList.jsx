@@ -1,16 +1,18 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import CamionCard from "./CamionCard";
-import { Link } from "react-router-dom";
 
-const TrucksList = ({ trucks, onSelectedCamion }) => {
+const TrucksList = ({ trucks }) => {
+  const navigate = useNavigate();
+  const handleItemClick = (id) => {
+    navigate(`/item/${id}`); // Navigate to the detail page with the ID
+  };
   return (
-    <Link to="trucklist">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {trucks.map((truck) => (
-          <CamionCard truck={truck} onSelectCamion={onSelectedCamion} />
-        ))}
-      </div>
-    </Link>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {trucks.map((truck) => (
+        <CamionCard truck={truck} onClick={handleItemClick} />
+      ))}
+    </div>
   );
 };
 

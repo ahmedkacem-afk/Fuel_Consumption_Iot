@@ -1,21 +1,31 @@
 import React from "react";
-import Lottie from "react-lottie";
-import animationData from "../../ressources/calender.json";
+import { Card } from "antd";
+// or the appropriate library
+
 const MaintenanceReminder = ({ reminderDate }) => {
   return (
-    <div className="items-center bg-slate-200 rounded-xl shadow-xl  mt-8 h-fit">
-      <Lottie
-        options={{
-          loop: false,
-          autoplay: true,
-          animationData: animationData,
+    <Card
+      style={{
+        borderRadius: "10px",
+        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+      }}
+    >
+      <h2 style={{ textAlign: "center" }}>Maintenance Reminder</h2>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
         }}
-        height={200}
-        width={150}
-      />
-      <h2 className="font-bold text-center text-black">Maintenance Reminder</h2>
-      <p className="text-center text-black pb-4">{reminderDate}</p>
-    </div>
+      >
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/847/847969.png"
+          alt="Calendar"
+          width="50"
+        />
+        <p style={{ marginTop: "10px" }}>20-12-2024</p>
+      </div>
+    </Card>
   );
 };
 

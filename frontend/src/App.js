@@ -8,7 +8,9 @@ import TruckDashboard from "./pages/TruckDashboard";
 import Layout from "./components/Layout";
 import Reports from "./pages/Reports";
 import Settings from "./pages/Settings";
-const FuelBarrel = () => {
+import "./App.css";
+
+const App = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     setTimeout(() => {
@@ -25,7 +27,7 @@ const FuelBarrel = () => {
             <Route path="/" element={<Layout />}>
               <Route index element={<HomePage />} />
               <Route path="trucklist" element={<TrucksListing />} />
-              <Route path="trucklist/:truckid" element={<TruckDashboard />} />
+              <Route path="trucklist/:camionId" element={<TruckDashboard />} />
               <Route path="reports" element={<Reports />} />
               <Route path="settings" element={<Settings />} />
             </Route>
@@ -36,4 +38,4 @@ const FuelBarrel = () => {
   );
 };
 
-export default FuelBarrel;
+export default App;
