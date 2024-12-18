@@ -6,7 +6,6 @@ from datetime import datetime
 from fastapi.middleware.cors import CORSMiddleware
 import asyncio
 # MongoDB Setup
-client = MongoClient("mongodb+srv://ahmedkacem712:I8Wog6JyYOgGOM4X@cluster0.s0ure.mongodb.net/")
 db = client["fuel_surveillance"]
 camions_collection = db["camions"]
 
